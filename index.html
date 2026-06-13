@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>iNFORMASHΞN™☬</title>
+    <title>iNFORMA ☬SHΞN™</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://js.puter.com/v2/"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,6 @@
         #background-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
         .auth-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); z-index: 2000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.5rem; transition: opacity 0.4s ease; }
         .auth-card { background: #0f0f0f; border: 1px solid #ff8d00; border-radius: 2rem; padding: 2.5rem 2rem; text-align: center; max-width: 320px; width: 90%; box-shadow: 0 0 40px rgba(255,141,0,0.3); }
-        /* کلاس ایزوله کردن لگو برای جلوگیری صد در صدی از به هم ریختگی */
         .shen-brand-ltr { direction: ltr; unicode-bidi: bidi-override; display: inline-block; white-space: nowrap; }
         .connect-btn { background: linear-gradient(45deg, #ff4800, #ff8d00); color: #000; font-weight: bold; padding: 0.8rem 1.5rem; border-radius: 2rem; margin-top: 1.5rem; cursor: pointer; transition: all 0.3s; border: none; width: 100%; font-size: 1.1rem; }
         .connect-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,141,0,0.4); }
@@ -55,20 +54,20 @@
     <div id="auth-overlay" class="auth-overlay">
         <div class="auth-card">
             <div class="text-orange-500 text-3xl mb-4 font-orbitron shen-brand-ltr font-black">☬SHΞN™</div>
-            <div class="text-sm text-gray-300 mb-2">Let's Go</div>
-            <button id="auth-connect-btn" class="connect-btn">Login To Your Free Account</button>
+            <div class="text-sm text-gray-300 mb-2">Login Your PUTER Account</div>
+            <button id="auth-connect-btn" class="connect-btn">Let's GO</button>
         </div>
     </div>
 
     <div class="flex flex-col min-h-screen">
         <main class="container mx-auto px-4 w-full flex-grow">
             <div id="initial-view" class="view max-w-3xl mx-auto">
-                <div class="text-center mb-12">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-orbitron tracking-wide sm:tracking-wider">
+                <div class="text-center mb-12 flex flex-col items-center justify-center">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-orbitron tracking-wide sm:tracking-wider flex flex-row items-center justify-center gap-2" dir="ltr">
                         <span class="gradient-black-gray">iNFORMA</span>
-                        <span class="animated-gradient-text shen-brand-ltr">☬SHΞN™</span>
+                        <span class="animated-gradient-text">☬SHΞN™</span>
                     </h1>
-                    <p class="text-sm md:text-base text-gray-300 mt-3">اولین لابراتوار دانشگاهی هسته مستقل شین</p>
+                    <p class="text-sm md:text-base text-gray-300 mt-3 w-full text-center" dir="rtl">اولین لابراتوار دانشگاهی هسته مستقل شین</p>
                 </div>
                 
                 <div class="shen-card p-6 md:p-8">
@@ -93,17 +92,23 @@
                     <button id="menu-toggle" class="w-12 h-12 rounded-full bg-gray-900/80 border border-orange-500/50 backdrop-blur-sm text-orange-400 flex items-center justify-center shadow-lg transform hover:scale-110 transition-all">
                         <i data-lucide="menu"></i>
                     </button>
-                    <div id="floating-menu" class="absolute top-14 right-0 bg-black/80 border border-orange-500/50 backdrop-blur-md rounded-lg shadow-xl p-2 space-y-1 origin-top-right transition-all duration-200 transform scale-95 opacity-0 pointer-events-none w-64">
+                    <div id="floating-menu" class="absolute top-14 right-0 bg-black/90 border border-orange-500/50 backdrop-blur-md rounded-lg shadow-xl p-2 space-y-1 origin-top-right transition-all duration-200 transform scale-95 opacity-0 pointer-events-none w-64 z-50">
                         <button id="home-btn" class="w-full flex items-center space-x-2 space-x-reverse p-2 rounded-md hover:bg-orange-500/10 transition-colors text-right text-orange-300">
                             <i data-lucide="home" class="w-5 h-5 shrink-0"></i>
                             <span class="text-sm">بزنی با خاطراتت سوت میشی صفحه اول</span>
+                        </button>
+                        <button id="download-session-btn" class="w-full flex items-center space-x-2 space-x-reverse p-2 rounded-md hover:bg-orange-500/10 transition-colors text-right text-cyan-400 border-t border-orange-500/20 mt-1 pt-2">
+                            <i data-lucide="download-cloud" class="w-5 h-5 shrink-0"></i>
+                            <span class="text-sm">دانلود محتوای نشست (HTML)</span>
                         </button>
                     </div>
                 </div>
                 
                 <div class="text-center pt-4 pb-8">
                     <h2 class="text-xl font-bold text-orange-400" id="chat-title">تشریح مشکل</h2>
-                    <p class="text-sm text-gray-400 mt-1">لابراتوار تحلیل متصل شد به <span class="shen-brand-ltr">☬SHΞN™ core</span></p>
+                    <p class="text-sm text-gray-400 mt-1 flex justify-center items-center gap-1" dir="rtl">
+                        لابراتوار متصل شد به <span class="shen-brand-ltr">☬SHΞN™ core</span>
+                    </p>
                 </div>
                 
                 <div id="chat-container" class="flex flex-col space-y-6 px-1 pb-10"></div>
@@ -113,11 +118,16 @@
                         [ ☬SHΞN™ core thinking... ]
                     </div>
                 </div>
+                <div id="scroll-anchor" class="h-2 w-full"></div>
             </div>
         </main>
 
         <footer class="py-6 text-center text-sm relative z-10">
-            <p class="animated-gradient-text font-semibold">Exclusive <span class="shen-brand-ltr">☬SHΞN™</span> made</p>
+            <p class="font-semibold flex items-center justify-center gap-1" dir="ltr">
+                <span class="animated-gradient-text">Exclusive</span>
+                <span class="animated-gradient-text">☬SHΞN™</span>
+                <span class="animated-gradient-text">made</span>
+            </p>
         </footer>
     </div>
 
@@ -160,29 +170,39 @@
             const menuToggle = document.getElementById('menu-toggle');
             const floatingMenu = document.getElementById('floating-menu');
             const homeBtn = document.getElementById('home-btn');
+            const downloadSessionBtn = document.getElementById('download-session-btn');
             const authOverlay = document.getElementById('auth-overlay');
             const authConnectBtn = document.getElementById('auth-connect-btn');
+            const scrollAnchor = document.getElementById('scroll-anchor');
 
             let currentMode = 'تشریح مشکل';
             let isChatReady = false;
             let isLoading = false;
             let messages = [];
 
-            const SYSTEM_INSTRUCTION = `تو یک دستیار هوشمند، حرفه‌ای و هکر استایل به نام '☬SHΞN™ learner' هستی. پردازش‌های تو در '☬SHΞN™ core' انجام می‌شود.
-- لحن تو باید مستقیم، تخصصی، و بدون مقدمه و احوال‌پرسی باشد.
-- فقط به زبان فارسی روان صحبت کن. اصطلاحات تخصصی شبکه، سرور و کدنویسی را به انگلیسی بنویس.
-- هرگز از کاراکترهای ژاپنی یا چینی استفاده نکن.
-- پاسخ‌هایت را قدم‌به‌قدم بده و همه‌چیز را یکجا ننویس.
+            const SYSTEM_INSTRUCTION = `تو دستیار هوشمند '☬SHΞN™ learner' هستی. پردازش‌های تو در '☬SHΞN™ core' انجام می‌شود.
+- لحن تو مستقیم، تخصصی، و بدون احوال‌پرسی است.
+- فقط به زبان فارسی روان صحبت کن. اصطلاحات را انگلیسی بنویس.
+- هرگز از کاراکترهای ژاپنی/چینی استفاده نکن.
+- آموزش‌ها را قدم‌به‌قدم پیش ببر.
 
-⚠️ بسیار مهم (نحوه تعامل):
-تو باید در انتهای هر پیام خود، حتماً یکی از تگ‌های زیر را برای دریافت پاسخ از کاربر قرار دهی:
-1. اگر نیاز به گرفتن توضیح، دستور یا کدی از سمت کاربر داری: [INPUT:راهنمای کادر متنی]
-2. اگر سوال بله/خیر می‌پرسی: [YESNO:متن سوال]
-3. اگر چند گزینه می‌دهی: [CHOICE:گزینه۱|گزینه۲|گزینه۳]
-4. اگر آموزش دادی و منتظر تایید انجام آن هستی: [CHECKBOX]
+⚠️ بسیار مهم:
+در انتهای هر پیام خود، حتماً یکی از تگ‌های زیر را قرار بده:
+1. اگر نیاز به گرفتن توضیح یا کد از کاربر داری: [INPUT:توضیحات پیش‌فرض فرم]
+2. اگر سوال بله/خیر می‌پرسی: [YESNO:سوال؟]
+3. اگر چند گزینه می‌دهی: [CHOICE:گزینه۱|گزینه۲]
+4. اگر منتظر تایید مرحله هستی: [CHECKBOX]
 `.trim();
 
-            // با کلیک روی ورود، پاپ‌آپ مسدود نمی‌شود چون هنوز ریکوئستی سمت هوش مصنوعی نرفته است
+            // تابع اسکرول نرم و کنترل‌شده
+            function smoothScrollToBottom() {
+                scrollAnchor.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+            
+            function instantScrollToBottom() {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+
             authConnectBtn.addEventListener('click', () => {
                 authConnectBtn.innerText = 'در حال ورود...';
                 setTimeout(() => {
@@ -200,7 +220,7 @@
                 const wrapper = document.createElement('div');
                 wrapper.className = 'flex items-start gap-3 chat-bubble user-bubble justify-end mb-6';
                 wrapper.innerHTML = `
-                    <div class="shen-card p-4 shadow-md order-1 bg-orange-950/20 border-orange-500/30 text-orange-50 max-w-[85%] sm:max-w-xl">
+                    <div class="shen-card p-4 shadow-md order-1 bg-orange-950/20 border-orange-500/30 text-orange-50 max-w-[85%] sm:max-w-xl break-words">
                         ${text.replace(/\n/g, '<br>')}
                     </div>
                     <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center order-2 shrink-0 border border-orange-500/50 shadow-[0_0_10px_rgba(255,141,0,0.2)]">
@@ -208,13 +228,12 @@
                     </div>`;
                 chatContainer.appendChild(wrapper);
                 lucide.createIcons();
-                window.scrollTo(0, document.body.scrollHeight);
+                smoothScrollToBottom();
             }
 
             async function streamPuterResponse(userPrompt, onChunk, onComplete) {
                 messages.push({ role: "user", content: userPrompt });
                 try {
-                    // در اینجا Puter در صورت نیاز به لاگین، به صورت قانونی پاپ‌آپ باز می‌کند
                     const response = await puter.ai.chat(messages, { stream: true });
                     let full = "";
                     for await (const part of response) {
@@ -226,8 +245,8 @@
                     onComplete(full);
                 } catch(err) {
                     console.error(err);
-                    messages.pop(); // حذف پیام ارسال نشده از هیستوری
-                    onComplete(null, err.message || "ارتباط با سرور برقرار نشد. لطفاً اینترنت و پاپ‌آپ مرورگر را بررسی کنید.");
+                    messages.pop();
+                    onComplete(null, err.message || "ارتباط با سرور برقرار نشد. اینترنت را بررسی کنید.");
                 }
             }
 
@@ -235,6 +254,7 @@
                 if(isLoading) return;
                 isLoading = true;
                 loadingIndicator.classList.remove('hidden');
+                smoothScrollToBottom();
                 
                 const aiDiv = document.createElement('div');
                 aiDiv.className = 'flex items-start gap-3 chat-bubble ai-bubble w-full mb-8';
@@ -244,7 +264,7 @@
                 logo.innerHTML = '<span class="text-lg">☬</span>';
                 
                 const contentDiv = document.createElement('div');
-                contentDiv.className = 'shen-card p-5 shadow-md order-2 w-full max-w-[90%] sm:max-w-2xl leading-relaxed text-gray-200';
+                contentDiv.className = 'shen-card p-5 shadow-md order-2 w-full max-w-[90%] sm:max-w-2xl leading-relaxed text-gray-200 overflow-x-hidden';
                 
                 const cursor = document.createElement('span');
                 cursor.className = 'cursor inline-block w-[2px] h-[1.2em] bg-orange-500 ml-1 align-middle';
@@ -254,15 +274,14 @@
                 aiDiv.appendChild(contentDiv);
                 chatContainer.appendChild(aiDiv);
                 
-                window.scrollTo(0, document.body.scrollHeight);
-
                 let accumulated = "";
                 await streamPuterResponse(prompt,
                     (partial) => {
                         accumulated = partial;
                         contentDiv.innerText = accumulated;
                         contentDiv.appendChild(cursor);
-                        window.scrollTo(0, document.body.scrollHeight);
+                        // برای جلوگیری از پرش‌های سنگین، حین استریم اسکرول عادی می‌کنیم
+                        instantScrollToBottom();
                     },
                     (final, error) => {
                         loadingIndicator.classList.add('hidden');
@@ -276,7 +295,7 @@
                         }
                         isLoading = false;
                         lucide.createIcons();
-                        window.scrollTo(0, document.body.scrollHeight);
+                        smoothScrollToBottom(); // اسکرول نرم پس از پایان ساخت المان‌ها
                     }
                 );
             }
@@ -291,7 +310,6 @@
             }
 
             function formatResponse(text) {
-                let interactiveHtml = '';
                 let mainText = text;
                 
                 const yesNo = text.match(/\[YESNO:(.*?)\]/);
@@ -304,39 +322,43 @@
                 else if(input) mainText = mainText.replace(input[0], '').trim();
                 else if(checkbox) mainText = mainText.replace(checkbox[0], '').trim();
 
-                interactiveHtml += '<div class="interactive-active mt-5">';
+                // بخش اینتراکتیو با قابلیت دکمه + متن دلخواه کاربر
+                let interactiveHtml = '<div class="interactive-active mt-5">';
+                let buttonsHtml = '';
                 
                 if(yesNo) {
-                    interactiveHtml += `
-                        <div class="flex flex-wrap gap-4">
-                            <button class="choice-btn flex-1 border border-orange-500/50 bg-orange-500/20 text-orange-300 hover:bg-orange-500 hover:text-black py-3 rounded-xl transition-all duration-300 font-bold shadow-lg shadow-orange-500/10">بله</button>
+                    buttonsHtml = `
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <button class="choice-btn flex-1 border border-orange-500/50 bg-orange-500/20 text-orange-300 hover:bg-orange-500 hover:text-black py-3 rounded-xl transition-all duration-300 font-bold shadow-lg">بله</button>
                             <button class="choice-btn flex-1 border border-gray-600/50 bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white py-3 rounded-xl transition-all duration-300 font-bold shadow-lg">خیر</button>
                         </div>`;
                 } else if(choice) {
                     const options = choice[1].split('|').map(o => o.trim());
-                    interactiveHtml += `<div class="flex flex-col sm:flex-row flex-wrap gap-3">
+                    buttonsHtml = `<div class="flex flex-col sm:flex-row flex-wrap gap-3 mb-4">
                         ${options.map(opt => `<button class="choice-btn border border-orange-500/30 bg-black/40 text-orange-200 hover:bg-orange-500 hover:text-black hover:border-orange-500 px-5 py-3 rounded-xl transition-all duration-300 font-semibold shadow-sm">${opt}</button>`).join('')}
                     </div>`;
                 } else if(checkbox) {
-                    interactiveHtml += `
-                        <div class="pt-4 border-t border-white/10">
+                    buttonsHtml = `
+                        <div class="pt-4 pb-4 mb-2 border-b border-white/10">
                             <label class="flex items-center cursor-pointer group w-fit">
                                 <input type="checkbox" class="confirm-checkbox w-6 h-6 ml-3 rounded-md border-2 border-orange-500/70 bg-black/50 appearance-none checked:bg-orange-500 checked:border-orange-500 transition-all cursor-pointer">
                                 <span class="text-base sm:text-lg font-semibold text-gray-300 group-hover:text-white transition-colors select-none">انجام دادم، بریم مرحله بعد.</span>
                             </label>
                         </div>`;
-                } else {
-                    const placeholderText = input ? input[1] : "پاسخ یا کد خود را اینجا بنویسید...";
-                    interactiveHtml += `
-                        <form class="input-form flex flex-col gap-3">
-                            <textarea placeholder="${placeholderText}" class="shen-input h-28 text-sm sm:text-base focus:bg-black/80"></textarea>
-                            <button type="submit" class="bg-gradient-to-r from-orange-600 to-orange-400 text-black py-3 px-4 rounded-xl font-bold w-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,141,0,0.4)] text-base sm:text-lg flex items-center justify-center gap-2">
-                                <i data-lucide="send" class="w-5 h-5"></i>
-                                ارسال پاسخ
-                            </button>
-                        </form>`;
                 }
-                interactiveHtml += '</div>';
+
+                const placeholderText = input ? input[1] : "پاسخ شخصی، کُد، یا توضیح بیشتر را اینجا بنویسید...";
+                // فرم متن همیشه حضور دارد
+                const inputHtml = `
+                    <form class="input-form flex flex-col gap-3 relative">
+                        <textarea placeholder="${placeholderText}" class="shen-input h-24 text-sm sm:text-base focus:bg-black/80"></textarea>
+                        <button type="submit" class="bg-gradient-to-r from-orange-600 to-orange-400 text-black py-2.5 px-4 rounded-xl font-bold w-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,141,0,0.4)] text-sm sm:text-base flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            ارسال پاسخ
+                        </button>
+                    </form>`;
+                
+                interactiveHtml += buttonsHtml + inputHtml + '</div>';
 
                 let html = mainText
                     .replace(/```(\w+)?\n([\s\S]*?)```/g, (m, lang, code) => {
@@ -355,7 +377,7 @@
                     })
                     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-orange-400 font-bold">$1</strong>')
                     .replace(/\*(.*?)\*/g, '<em class="italic text-gray-300">$1</em>')
-                    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 underline-offset-4 transition-colors">$1</a>')
+                    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline transition-colors">$1</a>')
                     .replace(/^- (.*$)/gm, '<li class="mb-2 flex items-start"><span class="text-orange-500 ml-2 mt-1 shrink-0">❖</span><span class="text-gray-200">$1</span></li>')
                     .replace(/(<li.*>[\s\S]*?<\/li>)+/g, '<ul class="list-none my-4 pr-2 space-y-1">$&</ul>')
                     .replace(/\n/g, '<br>');
@@ -369,8 +391,8 @@
                     el.style.opacity = '0.5';
                     el.style.pointerEvents = 'none';
                     el.style.filter = 'grayscale(100%)';
-                    const btn = el.querySelector('button[type="submit"]');
-                    if(btn) btn.style.display = 'none';
+                    const btns = el.querySelectorAll('button[type="submit"], .choice-btn');
+                    btns.forEach(b => b.style.display = 'none');
                 });
             }
 
@@ -415,11 +437,64 @@
                 if(chk) chk.addEventListener('change', (e) => {
                     if(e.target.checked) {
                         disableAllPrevious();
-                        addUserMessageToUI("انجام دادم، لطفاً مرحله بعد را توضیح بده.");
-                        getAIResponseAndDisplay("مرحله تایید شد. قدم بعدی چیست؟");
+                        addUserMessageToUI("مرحله را انجام دادم.");
+                        getAIResponseAndDisplay("تایید شد. قدم بعدی را توضیح بده.");
                     }
                 });
             }
+
+            // مکانیزم خروجی گرفتن تمیز (دانلود نشست)
+            downloadSessionBtn.addEventListener('click', () => {
+                const clone = chatContainer.cloneNode(true);
+                // پاک‌سازی عناصر اینتراکتیو و گرافیک‌های اضافی برای خروجی تمیز
+                clone.querySelectorAll('.interactive-active, .cursor, button, input').forEach(el => el.remove());
+                
+                const exportHtml = `
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تاریخچه نشست ☬SHΞN™</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; background: #0a0a0a; color: #d1d5db; padding: 2rem; line-height: 1.8; direction: rtl; }
+        .export-container { max-width: 800px; margin: auto; }
+        .header-title { text-align: center; color: #ff8d00; font-size: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid #333; padding-bottom: 1rem; }
+        .chat-bubble { display: flex; margin-bottom: 1.5rem; gap: 1rem; }
+        .user-bubble { flex-direction: row-reverse; }
+        .ai-bubble { flex-direction: row; }
+        .shen-card { background: #1a1a1a; padding: 1.5rem; border-radius: 1rem; border: 1px solid #333; max-width: 85%; }
+        .user-bubble .shen-card { border-color: rgba(249, 115, 22, 0.4); background: rgba(67, 20, 7, 0.3); }
+        .ai-bubble .shen-card { border-color: #444; }
+        .shen-logo { width: 40px; height: 40px; background: rgba(255,141,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ff8d00; border: 1px solid #ff8d00; font-weight: bold; flex-shrink: 0; direction: ltr; }
+        .code-block { background: #0d1117; border-radius: 0.5rem; overflow: hidden; margin: 1.5rem 0; direction: ltr; text-align: left; border: 1px solid #30363d; }
+        .code-block pre { padding: 1rem; margin: 0; overflow-x: auto; color: #e5e7eb; font-family: monospace; font-size: 0.9rem; }
+        .code-header { background: #161b22; padding: 0.5rem 1rem; font-size: 0.8rem; color: #8b949e; border-bottom: 1px solid #30363d; }
+        a { color: #22d3ee; text-decoration: none; }
+        strong { color: #fb923c; }
+        em { color: #9ca3af; font-style: italic; }
+        ul { padding-right: 1.5rem; list-style: none; }
+        li::before { content: "❖ "; color: #f97316; margin-left: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="export-container">
+        <div class="header-title">تاریخچه مکالمات لابراتوار ☬SHΞN™</div>
+        ${clone.innerHTML}
+    </div>
+</body>
+</html>`;
+                
+                const blob = new Blob([exportHtml], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `SHEN_Core_Session_${new Date().getTime()}.html`;
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                // بستن منو
+                floatingMenu.classList.add('scale-95', 'opacity-0', 'pointer-events-none');
+            });
 
             function updateModeUI() {
                 modeBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.mode === currentMode));
@@ -470,7 +545,6 @@
                 }
             }
 
-            // اتصال رویدادها
             modeBtns.forEach(btn => btn.addEventListener('click', () => { currentMode = btn.dataset.mode; updateModeUI(); }));
             startBtn.addEventListener('click', handleStart);
             
@@ -488,6 +562,7 @@
                 messages = [{ role: "system", content: SYSTEM_INSTRUCTION }];
                 isLoading = false;
                 updateModeUI();
+                floatingMenu.classList.add('scale-95', 'opacity-0', 'pointer-events-none');
             });
             
             document.addEventListener('click', () => {
@@ -496,9 +571,8 @@
                 }
             });
 
-        }); // پایان DOMContentLoaded
+        });
 
-        // سیستم ذرات پس‌زمینه (Particles)
         (function() {
             const canvas = document.getElementById('background-canvas');
             const ctx = canvas.getContext('2d');
